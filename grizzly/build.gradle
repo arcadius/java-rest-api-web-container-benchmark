@@ -1,0 +1,9 @@
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+dependencies {
+    compile(project(':api'))
+    compile "org.springframework.boot:spring-boot-starter-jersey:${bootVersion}"
+    compile libraries.grizzly
+}
