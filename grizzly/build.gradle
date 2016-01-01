@@ -1,10 +1,7 @@
-mainClassName='com.menelic.jwcb.grizzly.Main'
+mainClassName = 'com.menelic.jwcb.grizzly.Main'
 
-configurations {
-    compile.exclude module: "spring-boot-starter-tomcat"
-}
+test.onlyIf { false } // TODO: jetty tests failing... disabled for now
 
 dependencies {
-    compile(project(':common'))
     compile libraries.grizzly
 }

@@ -1,12 +1,5 @@
-mainClassName='com.menelic.jwcb.undertow.Main'
-
-configurations {
-    compile.exclude module: "spring-boot-starter-tomcat"
-}
+mainClassName = 'com.menelic.jwcb.undertow.Main'
 
 dependencies {
-    compile(project(':common'))
-
-    compile "org.springframework.boot:spring-boot-starter-jersey:${bootVersion}"
-    compile "org.springframework.boot:spring-boot-starter-undertow:${bootVersion}"
+    compile libraries.undertow
 }

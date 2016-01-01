@@ -1,11 +1,11 @@
-package com.menelic.jwcb.tomcat.resource;
+package com.menelic.jwcb.undertow.resource;
 
 
 import com.menelic.jwcb.common.resource.AbstractApiResourceITest;
 
-public class ApiResourceIITest extends AbstractApiResourceITest {
+public class ApiResourceITest extends AbstractApiResourceITest {
     @Override
     protected String expectedServerSignature() {
-        return "";
+        return null;
     }
 }
