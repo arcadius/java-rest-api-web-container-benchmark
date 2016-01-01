@@ -25,6 +25,7 @@ ext {
 
 allprojects {
 
+    apply plugin: 'java'
 
     repositories {
         mavenLocal()
@@ -41,6 +42,22 @@ allprojects {
 
 }
 
+/*configurations {
+    testArtifacts
+}
+task testJar (type: Jar) {
+    baseName = "${project.name}-test"
+    from sourceSets.test.output
+}
+artifacts {
+    testArtifacts testJar
+}*/
+
+configure(subprojects - project(':common')) {
+    dependencies {
+        testCompile files(project(':common').sourceSets.test.output)
+    }
+}
 
 subprojects {
   buildscript {
@@ -56,7 +73,6 @@ subprojects {
         }
     }
 
-    apply plugin: 'java'
     apply plugin: 'application'
     //apply plugin: 'spring-boot'
 

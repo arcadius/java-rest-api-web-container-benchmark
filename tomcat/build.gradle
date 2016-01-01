@@ -1,6 +1,5 @@
-
+mainClassName='com.menelic.jwcb.tomcat.Main'
 dependencies {
-    compile(project(':api'))
-    compile "org.springframework.boot:spring-boot-starter-jersey:${bootVersion}"
+    compile(project(':common'))
     compile "org.springframework.boot:spring-boot-starter-tomcat:${bootVersion}"
 }

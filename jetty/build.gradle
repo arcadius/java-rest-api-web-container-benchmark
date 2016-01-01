@@ -1,10 +1,10 @@
+mainClassName='com.menelic.jwcb.jetty.Main'
 
 configurations {
     compile.exclude module: "spring-boot-starter-tomcat"
 }
 
 dependencies {
-    compile(project(':api'))
-    compile "org.springframework.boot:spring-boot-starter-jersey:${bootVersion}"
+    compile(project(':common'))
     compile "org.springframework.boot:spring-boot-starter-jetty:${bootVersion}"
 }

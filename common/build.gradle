@@ -1,0 +1,6 @@
+mainClassName='com.menelic.jwcb.common.AbstractApplication'
+dependencies {
+    compile libraries.bootJersey
+    compile libraries.springCore
+}
+
