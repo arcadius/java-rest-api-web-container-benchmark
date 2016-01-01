@@ -1,11 +1,11 @@
 package com.menelic.jwcb.common.resource;
 
 import com.menelic.jwcb.common.AbstractApplication;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,22 +24,30 @@ import static org.hamcrest.core.Is.is;
 public abstract class AbstractApiResourceITest {
 
     @Value("${local.server.port}")
-    protected int port;
+    private int port;
 
-    protected RestTemplate restTemplate = new TestRestTemplate();
+    private RestTemplate restTemplate;
+
+    @Before
+    public void setUpAbstractApiResourceITest() {
+        restTemplate = new RestTemplate();
+    }
+
+    ;
 
     @Test
     public void testResponse() {
-        ResponseEntity<String> entity = this.restTemplate
-                .getForEntity("http://localhost:" + this.port + "/api", String.class);
+        String url = String.format("http://127.0.0.1:%s/api", this.port);
+        ResponseEntity<String> entity = restTemplate.getForEntity(url, String.class);
         assertThat(entity.getStatusCode(), is(HttpStatus.OK));
         assertThat(entity.getBody(), is(ApiResource.RESPONSE));
         assertThat(entity.getHeaders().getContentType().toString(), containsString(MediaType.APPLICATION_JSON));
 
+        String actualServerSignature = entity.getHeaders().getFirst("Server");
         if (expectedServerSignature() == null) {
-            assertThat(entity.getHeaders().getFirst("Server"), is(expectedServerSignature()));
+            assertThat(actualServerSignature, is(expectedServerSignature()));
         } else {
-            assertThat(entity.getHeaders().getFirst("Server"), containsString(expectedServerSignature()));
+            assertThat(actualServerSignature, containsString(expectedServerSignature()));
         }
 
     }
