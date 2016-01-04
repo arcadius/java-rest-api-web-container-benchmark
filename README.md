@@ -1,5 +1,8 @@
-# java-web-containers-benchmark
-Benchmarking servlet containers
+# java-rest-api-web-container-benchmark
+Trying to find out which web container to use for your nest Java REST API?
+
+This project compare 
+tomcat, Jetty, Grizzly and Undertow in term of serving JAX-RS response
 
 sudo apt-get install apache2-utils
 
