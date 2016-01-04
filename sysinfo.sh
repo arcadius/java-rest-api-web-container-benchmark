@@ -7,3 +7,6 @@ free -h
 
 echo "Java version: "
 java -version
+echo " "
+echo "OS: "
+uname -a

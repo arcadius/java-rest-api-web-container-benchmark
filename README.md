@@ -3,8 +3,15 @@ Benchmarking servlet containers
 
 sudo apt-get install apache2-utils
 
-cd submodule
-./gradlew bootRun
+./gradlew -p grizzly bootRun
+or
+./gradlew -p jetty bootRun
+or
+./gradlew -p tomcat bootRun
+
+or
+./gradlew -p undertow bootRun
+
 
 then in a new console
-./load.sh
+./run-load-test.sh

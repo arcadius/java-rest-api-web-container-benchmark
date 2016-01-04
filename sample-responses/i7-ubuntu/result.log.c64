@@ -1,0 +1,221 @@
+===================grizzly
+This is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 1000000 requests
+Completed 2000000 requests
+Completed 3000000 requests
+Completed 4000000 requests
+Completed 5000000 requests
+Completed 6000000 requests
+Completed 7000000 requests
+Completed 8000000 requests
+Completed 9000000 requests
+Completed 10000000 requests
+Finished 10000000 requests
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /api
+Document Length:        27 bytes
+
+Concurrency Level:      64
+Time taken for tests:   360.752 seconds
+Complete requests:      10000000
+Failed requests:        0
+Keep-Alive requests:    9961121
+Total transferred:      1589805605 bytes
+HTML transferred:       270000000 bytes
+Requests per second:    27719.86 [#/sec] (mean)
+Time per request:       2.309 [ms] (mean)
+Time per request:       0.036 [ms] (mean, across all concurrent requests)
+Transfer rate:          4303.63 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       2
+Processing:     0    2   1.7      2     178
+Waiting:        0    2   1.7      2     178
+Total:          0    2   1.7      2     178
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      2
+  80%      2
+  90%      3
+  95%      4
+  98%      6
+  99%     10
+ 100%    178 (longest request)
+==================================jetty
+
+This is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 1000000 requests
+Completed 2000000 requests
+Completed 3000000 requests
+Completed 4000000 requests
+Completed 5000000 requests
+Completed 6000000 requests
+Completed 7000000 requests
+Completed 8000000 requests
+Completed 9000000 requests
+Completed 10000000 requests
+Finished 10000000 requests
+
+
+Server Software:        Jetty(9.2.14.v20151106)
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /api
+Document Length:        27 bytes
+
+Concurrency Level:      64
+Time taken for tests:   398.594 seconds
+Complete requests:      10000000
+Failed requests:        0
+Keep-Alive requests:    10000000
+Total transferred:      2070000000 bytes
+HTML transferred:       270000000 bytes
+Requests per second:    25088.17 [#/sec] (mean)
+Time per request:       2.551 [ms] (mean)
+Time per request:       0.040 [ms] (mean, across all concurrent requests)
+Transfer rate:          5071.54 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       2
+Processing:     0    3   9.1      0    1905
+Waiting:        0    3   9.1      0    1905
+Total:          0    3   9.1      0    1907
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      1
+  75%      2
+  80%      3
+  90%      5
+  95%      8
+  98%     20
+  99%     40
+ 100%   1907 (longest request)
+
+=====================tomcatThis is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 1000000 requests
+Completed 2000000 requests
+Completed 3000000 requests
+Completed 4000000 requests
+Completed 5000000 requests
+Completed 6000000 requests
+Completed 7000000 requests
+Completed 8000000 requests
+Completed 9000000 requests
+Completed 10000000 requests
+Finished 10000000 requests
+
+
+Server Software:        Apache-Coyote/1.1
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /api
+Document Length:        27 bytes
+
+Concurrency Level:      64
+Time taken for tests:   540.056 seconds
+Complete requests:      10000000
+Failed requests:        0
+Keep-Alive requests:    9900034
+Total transferred:      1999500170 bytes
+HTML transferred:       270000000 bytes
+Requests per second:    18516.61 [#/sec] (mean)
+Time per request:       3.456 [ms] (mean)
+Time per request:       0.054 [ms] (mean, across all concurrent requests)
+Transfer rate:          3615.62 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       2
+Processing:     0    3   5.9      3     268
+Waiting:        0    3   5.7      3     268
+Total:          0    3   5.9      3     268
+
+Percentage of the requests served within a certain time (ms)
+  50%      3
+  66%      3
+  75%      3
+  80%      3
+  90%      5
+  95%      8
+  98%     18
+  99%     30
+ 100%    268 (longest request)
+=========================================undertow
+This is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 1000000 requests
+Completed 2000000 requests
+Completed 3000000 requests
+Completed 4000000 requests
+Completed 5000000 requests
+Completed 6000000 requests
+Completed 7000000 requests
+Completed 8000000 requests
+Completed 9000000 requests
+Completed 10000000 requests
+Finished 10000000 requests
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /api
+Document Length:        27 bytes
+
+Concurrency Level:      64
+Time taken for tests:   406.987 seconds
+Complete requests:      10000000
+Failed requests:        0
+Keep-Alive requests:    10000000
+Total transferred:      1740000000 bytes
+HTML transferred:       270000000 bytes
+Requests per second:    24570.82 [#/sec] (mean)
+Time per request:       2.605 [ms] (mean)
+Time per request:       0.041 [ms] (mean, across all concurrent requests)
+Transfer rate:          4175.12 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       2
+Processing:     0    3   3.5      2     206
+Waiting:        0    3   3.5      2     206
+Total:          0    3   3.5      2     206
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      2
+  80%      3
+  90%      4
+  95%      6
+  98%     11
+  99%     17
+ 100%    206 (longest request)
