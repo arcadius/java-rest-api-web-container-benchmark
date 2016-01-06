@@ -18,3 +18,6 @@ or
 
 then in a new console
 ./run-load-test.sh
+
+There is a blog post about this at 
+http://menelic.com/2016/01/06/java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly-vs-undertow/

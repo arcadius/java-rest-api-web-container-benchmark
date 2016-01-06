@@ -15,10 +15,8 @@ import static javax.ws.rs.core.Response.ok;
 @Component
 public class ApiResource {
     public static final String RESPONSE = "{\"greeting\":\"Hello World!\"}";
-
     @GET
     public Response test() {
         return ok(RESPONSE).build();
     }
-
 }

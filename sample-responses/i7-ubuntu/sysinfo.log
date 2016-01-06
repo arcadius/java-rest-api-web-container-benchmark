@@ -6,10 +6,10 @@ model name	: Intel(R) Core(TM) i7-3537U CPU @ 2.00GHz
  
 RAM: 
              total       used       free     shared    buffers     cached
-Mem:          7.7G       7.3G       319M       319M       514M       4.4G
--/+ buffers/cache:       2.4G       5.3G
-Swap:         7.9G        16M       7.8G
-Java version: 
+Mem:          7.7G       4.9G       2.7G       399M       206M       2.3G
+-/+ buffers/cache:       2.5G       5.2G
+Swap:         7.9G         0B       7.9G
+Java version:
 java version "1.8.0_66"
 Java(TM) SE Runtime Environment (build 1.8.0_66-b17)
 Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)
