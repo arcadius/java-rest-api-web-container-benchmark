@@ -1,22 +1,27 @@
 # java-rest-api-web-container-benchmark
-Trying to find out which web container to use for your nest Java REST API?
+Are you wondering which web container to use for your nest Java REST API?
+If your answer is yes, then you are not alone.
 
 This project compares: 
-tomcat, Jetty, Grizzly and Undertow in term of serving JAX-RS responses
+**Tomcat**, **Jetty**, **Grizzly** and **Undertow** in term of serving **JAX-RS** responses
 
-Setup:
-One needs to install apache bench:
+##Setup
+To run this benchmark, you will need:
 
-sudo apt-get install apache2-utils
+- The latest Oracle JDK 1.8 or later ( http://www.oracle.com/technetwork/java/javase/downloads ). 
+- install apache bench (https://httpd.apache.org/docs/2.2/programs/ab.html ). On debian/ubuntu: 
+`sudo apt-get install apache2-utils` 
 
-to run the test, first start the API server by doing:
+##Running load tests with default server configuration
+to run the test, 
 
-./gradlew -p <SERVER NAME> bootRun
+- first start the API server by doing:
+`./gradlew -p <SERVER NAME> bootRun`
+where `<SERVER NAME>` is one of `grizzly`, `jetty`, `tomcat` or `undertow`
 
-where server name is one of grizzly, jetty, tomcat or grizzly
-
-then in a new console
-./run-load-test.sh
+- then in a new console, do
+`./run-load-test.sh`
+feel free to edit the script for for different load profile 
 
 There is a blog post about this at 
 http://menelic.com/2016/01/06/java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly-vs-undertow/
@@ -24,24 +29,26 @@ http://menelic.com/2016/01/06/java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly
 
 actuator: -Dserver.servlet-path=/actuator
 
+##Changing server thread pool size
+One can easily change server thread pool size on the command line: 
+
+
+####Grizzly 
+
+`./gradlew bootRun -p grizzly -Dserver.grizzly.worker-threads=250`
 
 
 
-Tuning tomcat
-gradle bootRun -p tomcat -Dserver.tomcat.max-threads=250
+####Jetty
+
+`./gradlew bootRun -p jetty -Dserver.jetty.min-threads=250 -Dserver.jetty.max-threads=250` 
 
 
-Tuning Undertow
+####Tomcat
 
-gradle bootRun -p undertow -Dserver.undertow.worker-threads=250
-
-
-Tuning grizzly
-
-gradle bootRun -p grizzly -Dserver.grizzly.worker-threads=250 
+`./gradlew bootRun -p tomcat -Dserver.tomcat.max-threads=250`
 
 
+####Undertow
 
-Tuning jetty
-
-gradle bootRun -p jetty -Dserver.jetty.maxThreads=250 -Dserver.jetty.minThreads=250
+`./gradlew bootRun -p undertow -Dserver.undertow.worker-threads=250`

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class GrizzlyServerConfigurer {
     private static Logger LOG = LoggerFactory.getLogger(GrizzlyServerConfigurer.class);
 
-    @Value("${server.grizzly.worker-threads:10}")
+    @Value("${server.grizzly.worker-threads:0}")
     private Integer workerThreads;
 
 
