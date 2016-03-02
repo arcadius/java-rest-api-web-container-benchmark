@@ -19,7 +19,7 @@ public class Main extends AbstractApplication {
         Thread.currentThread().join();
     }
 
-    private static final URI BASE_URI = URI.create("http://localhost:8080/");
+    private static final URI BASE_URI = URI.create("http://0.0.0.0:8080/");
 
     private static void startServer() {
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
