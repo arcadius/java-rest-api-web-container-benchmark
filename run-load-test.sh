@@ -8,9 +8,9 @@ echo " " >> result.log 2>&1
 echo "========================================================== " >> result.log 2>&1
 echo " " >> result.log 2>&1
 echo "====================WARM-UP======================== " >> result.log 2>&1
-echo "============`date` Warming up the API for max 600*10 secs or for 100*10 million requests, whichever comes first" >> result.log 2>&1
+echo "============`date` Warming up the API for max 600*2 secs or for 100*10 million requests, whichever comes first" >> result.log 2>&1
 
-for i in `seq 1 10`;
+for i in `seq 1 2`;
         do
             echo "==== in warmin phase $i" >> result.log 2>&1
             echo " " >> result.log 2>&1
