@@ -52,7 +52,7 @@ In my case, we have 2 cores => workers=32
 
 ####Jetty
 
-`./gradlew bootRun -p jetty -Dserver.jetty.min-threads=32 -Dserver.jetty.max-threads=250 -Dserver.server-header=TestServer` 
+`./gradlew bootRun -p jetty -Dserver.jetty.min-threads=32 -Dserver.jetty.max-threads=32 -Dserver.server-header=TestServer` 
 
 
 ####Tomcat
