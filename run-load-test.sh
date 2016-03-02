@@ -8,7 +8,7 @@ echo " " >> result.log 2>&1
 echo "========================================================== " >> result.log 2>&1
 echo " " >> result.log 2>&1
 echo "====================WARM-UP======================== " >> result.log 2>&1
-echo "============`date` Warming up the API for max 600*2 secs or for 100*10 million requests, whichever comes first" >> result.log 2>&1
+echo "============`date` Warming up the API for max 600*2 secs or for 100*2 million requests, whichever comes first" >> result.log 2>&1
 
 for i in `seq 1 2`;
         do
