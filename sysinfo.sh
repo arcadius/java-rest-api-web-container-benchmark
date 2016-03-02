@@ -3,7 +3,7 @@ echo "CPU:"
 cat /proc/cpuinfo | grep "model name"
 echo " "
 echo "RAM: "
-free
+free -h
 
 echo "Java version: "
 java -version
