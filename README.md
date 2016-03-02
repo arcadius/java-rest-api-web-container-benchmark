@@ -39,23 +39,23 @@ One can easily change server thread pool size on the command line:
 
 ####Grizzly 
 
-`./gradlew bootRun -p grizzly -Dserver.grizzly.worker-threads=250`
+`./gradlew bootRun -p grizzly -Dserver.grizzly.worker-threads=250 -Dserver.server-header=TestServer`
 
 
 
 ####Jetty
 
-`./gradlew bootRun -p jetty -Dserver.jetty.min-threads=250 -Dserver.jetty.max-threads=250` 
+`./gradlew bootRun -p jetty -Dserver.jetty.min-threads=250 -Dserver.jetty.max-threads=250 -Dserver.server-header=TestServer` 
 
 
 ####Tomcat
 
-`./gradlew bootRun -p tomcat -Dserver.tomcat.max-threads=250`
+`./gradlew bootRun -p tomcat -Dserver.tomcat.max-threads=250 -Dserver.server-header=TestServer`
 
 
 ####Undertow
 
-`./gradlew bootRun -p undertow -Dserver.undertow.worker-threads=250`
+`./gradlew bootRun -p undertow -Dserver.undertow.worker-threads=250 -Dserver.server-header=TestServer`
 
 #Actuator
 To enable spring boot actuator,please look in `build.gradle` for the comments

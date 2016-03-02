@@ -28,6 +28,10 @@ public class Main extends AbstractApplication {
 
         JerseyResourceConfig jerseyConfig = ctx.getBean(JerseyResourceConfig.class);
         GrizzlyServerConfigurer grizzlyConfigurer = ctx.getBean(GrizzlyServerConfigurer.class);
+
+        ServerSignatureFilter signatureFilter = ctx.getBean(ServerSignatureFilter.class);
+        jerseyConfig.register(signatureFilter);
+
         final HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, jerseyConfig, false);
         grizzlyConfigurer.configure(server);
 

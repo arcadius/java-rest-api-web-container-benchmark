@@ -1,4 +1,4 @@
-package com.menelic;
+package com.menelic.jwcb.jetty;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
@@ -12,13 +12,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * original of this config file came from https://gist.github.com/jdavisonc/570819f4c7c6fe178df8
+ * The original of this config file came from https://gist.github.com/jdavisonc/570819f4c7c6fe178df8
  */
 @Component
 @ConfigurationProperties(prefix = "server.jetty", ignoreUnknownFields = false)
-public class JettyProperties implements EmbeddedServletContainerCustomizer {
+public class Customizer implements EmbeddedServletContainerCustomizer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JettyProperties.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Customizer.class);
 
 
     private Integer maxThreads;
@@ -63,7 +63,6 @@ public class JettyProperties implements EmbeddedServletContainerCustomizer {
                     threadPool.setMinThreads(minThreads);
                     LOGGER.info("===Jetty server configured with minThreads {}", minThreads);
                 }
-
             }
         });
     }
