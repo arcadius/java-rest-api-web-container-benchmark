@@ -6,12 +6,16 @@ If your answer is yes, then you are not alone.
 This project compares: 
 **Tomcat**, **Jetty**, **Grizzly** and **Undertow** in term of serving **JAX-RS** responses
 
-There are 2 blog entries supporting this benchmark:
+TO avoid any latency, the REST API does not try to access any backend service.
+
+There are 3 blog entries supporting this benchmark:
 
 
 - http://menelic.com/2016/01/06/java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly-vs-undertow/
 
 - and http://menelic.com/2016/01/25/java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly-vs-undertow-round-2/
+
+- and java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly-vs-undertow-round-3
 
 
 ##Setup
@@ -33,29 +37,33 @@ where `<SERVER NAME>` is one of `grizzly`, `jetty`, `tomcat` or `undertow`
 `./run-load-test.sh`
 feel free to edit the script for for different load profile 
 
-##Changing server thread pool size
+##Changing server thread pool size and header
 One can easily change server thread pool size on the command line: 
 
+Note that it has been advised (Undertow folk) that we take as worker-thread 16*numberOfCores
+
+In my case, we have 2 cores => workers=32
 
 ####Grizzly 
 
-`./gradlew bootRun -p grizzly -Dserver.grizzly.worker-threads=250 -Dserver.server-header=TestServer`
+`./gradlew bootRun -p grizzly -Dserver.grizzly.worker-threads=32 -Dserver.server-header=TestServer`
 
 
 
 ####Jetty
 
-`./gradlew bootRun -p jetty -Dserver.jetty.min-threads=250 -Dserver.jetty.max-threads=250 -Dserver.server-header=TestServer` 
+`./gradlew bootRun -p jetty -Dserver.jetty.min-threads=32 -Dserver.jetty.max-threads=250 -Dserver.server-header=TestServer` 
 
 
 ####Tomcat
 
-`./gradlew bootRun -p tomcat -Dserver.tomcat.max-threads=250 -Dserver.server-header=TestServer`
+`./gradlew bootRun -p tomcat -Dserver.tomcat.max-threads=32 -Dserver.server-header=TestServer`
 
 
 ####Undertow
 
-`./gradlew bootRun -p undertow -Dserver.undertow.worker-threads=250 -Dserver.server-header=TestServer`
+`./gradlew bootRun -p undertow -Dserver.undertow.worker-threads=32 -Dserver.server-header=TestServer`
+
 
 #Actuator
 To enable spring boot actuator,please look in `build.gradle` for the comments

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-echo "CPU:"
+echo "===CPU:"
 cat /proc/cpuinfo | grep "model name"
 echo " "
-echo "RAM: "
+echo "===RAM: "
 free -h
 
-echo "Java version: "
+echo "===Java version: "
 java -version
 echo " "
-echo "OS: "
+echo "===OS: "
 uname -a

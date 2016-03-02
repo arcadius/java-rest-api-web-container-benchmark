@@ -15,8 +15,7 @@ public class ServerSignatureFilter implements ContainerResponseFilter {
     private String serverName;
 
     @Override
-    public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext)
-            throws IOException {
+    public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
         responseContext.getHeaders().add("Server", serverName);
     }
 }
