@@ -8,20 +8,18 @@ echo " " >> result.log 2>&1
 echo "========================================================== " >> result.log 2>&1
 echo " " >> result.log 2>&1
 echo "====================WARM-UP======================== " >> result.log 2>&1
-echo "============`date` Warming up the API for max 600*2 secs or for 100*2 million requests, whichever comes first" >> result.log 2>&1
+echo "============`date` Warming up the API with 100 million requests" >> result.log 2>&1
 
-for i in `seq 1 2`;
-        do
-            echo "==== in warmin phase $i" >> result.log 2>&1
-            echo " " >> result.log 2>&1
-            ab -t 600 -n 100000000 -c 1 -d -q $URL >> result.log 2>&1
-            echo " " >> result.log 2>&1
-        done
+echo " " >> result.log 2>&1
+ab -k -n 100000000 -c 1 -d -q $URL >> result.log 2>&1
+echo " " >> result.log 2>&1
+
 
 echo "============`date` API warmed up. " >> result.log 2>&1
 echo " " >> result.log 2>&1
 echo "====================END WARM-UP======================== " >> result.log 2>&1
-echo " " >> result.log 2>&1
+echo "=== Sleeping for 2s" >> result.log 2>&1
+sleep 2
 echo "====================BENCHMARK======================== " >> result.log 2>&1
 
 echo "============`date` Running load test ..." >> result.log 2>&1
