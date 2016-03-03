@@ -1,0 +1,5 @@
+mainClassName = 'com.menelic.jwcb.undertow.Main'
+
+dependencies {
+    compile libraries.undertow
+}

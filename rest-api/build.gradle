@@ -1,0 +1,89 @@
+ext {
+    springVersion = '4.2.4.RELEASE'
+    bootVersion = '1.3.2.RELEASE'
+    grizzlyVersion = '2.22.1'
+
+    libraries = [
+            springCore  : "org.springframework:spring-context-support:${springVersion}",
+            bootPlugin  : "org.springframework.boot:spring-boot-gradle-plugin:${bootVersion}",
+            bootTest    : "org.springframework.boot:spring-boot-starter-test:${bootVersion}",
+            bootJersey  : "org.springframework.boot:spring-boot-starter-jersey:${bootVersion}",
+            servlets    : 'javax.servlet:javax.servlet-api:3.1.0',
+
+            /**Tested Containers */
+            undertow    : "org.springframework.boot:spring-boot-starter-undertow:${bootVersion}",
+            tomcat      : "org.springframework.boot:spring-boot-starter-tomcat:${bootVersion}",
+            jetty       : "org.springframework.boot:spring-boot-starter-jetty:${bootVersion}",
+            grizzly     : "org.glassfish.jersey.containers:jersey-container-grizzly2-http:${grizzlyVersion}",
+
+
+            /**Optional. Used only for tracing/debuging */
+            bootActuator: "org.springframework.boot:spring-boot-starter-actuator:${bootVersion}",
+            bootWeb     : "org.springframework.boot:spring-boot-starter-web:${bootVersion}",
+    ]
+
+}
+
+buildscript {
+    repositories {
+        maven { url 'http://repo.spring.io/plugins-release' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.1.RELEASE") //TODO: version
+    }
+}
+
+allprojects {
+
+    apply plugin: 'java'
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    version = '1.0.0'
+
+    configurations {
+        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-websocket'
+    }
+
+}
+
+configure(subprojects - project(':common')) {
+    dependencies {
+        compile project(':common')
+        testCompile files(project(':common').sourceSets.test.output)
+    }
+}
+
+configure(subprojects - project(':common') - project(':tomcat')) {
+    configurations {
+        compile.exclude module: "spring-boot-starter-tomcat"
+    }
+}
+
+subprojects {
+    apply plugin: 'application'
+    apply plugin: 'spring-boot'
+
+    bootRun {
+        systemProperties = System.properties
+    }
+
+    task wrapper(type: Wrapper) { gradleVersion = '2.10' }
+    dependencies {
+        testCompile libraries.bootTest
+
+
+        /**To enable actuator, uncomment the 2 lines below and use the command line swicth
+         *  -Dserver.servlet-path=/actuator  as per documentation
+         *  https://docs.spring.io/spring-boot/docs/current/reference/html/howto-actuator.html#howto-use-actuator-with-jersey
+         *  */
+        //compile libraries.bootActuator
+        //compile libraries.bootWeb
+    }
+}
