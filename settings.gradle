@@ -1,6 +1,0 @@
-include 'common'
-include 'undertow'
-include 'grizzly'
-include 'tomcat'
-include 'jetty'
-

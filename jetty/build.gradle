@@ -1,6 +1,0 @@
-mainClassName = 'com.menelic.jwcb.jetty.Main'
-
-dependencies {
-    compile libraries.jetty
-
-}

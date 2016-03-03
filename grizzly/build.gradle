@@ -1,7 +1,0 @@
-mainClassName = 'com.menelic.jwcb.grizzly.Main'
-
-test.onlyIf { false } // TODO: jetty tests failing... disabled for now
-
-dependencies {
-    compile libraries.grizzly
-}
