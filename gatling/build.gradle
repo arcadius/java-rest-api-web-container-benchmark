@@ -1,0 +1,37 @@
+apply plugin: 'scala'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.slf4j:slf4j-api:1.7.5'
+    testCompile "io.gatling.highcharts:gatling-charts-highcharts:2.1.7"
+    testCompile "junit:junit:4.11"
+}
+
+task warmUp(type: JavaExec, dependsOn: compileTestScala) {
+    systemProperties = System.properties
+    main = 'io.gatling.app.Gatling'
+    classpath sourceSets.test.output + sourceSets.test.runtimeClasspath
+
+    args '--no-reports',
+            '--simulation',
+            'com.menelic.jwcb.gatling.WarmUpSimulation',
+            '--binaries-folder',
+            sourceSets.test.output.classesDir
+}
+
+task runTest(type: JavaExec, dependsOn: warmUp) {
+    systemProperties = System.properties
+    main = 'io.gatling.app.Gatling'
+    classpath sourceSets.test.output + sourceSets.test.runtimeClasspath
+
+    args '--simulation',
+            'com.menelic.jwcb.gatling.RestApiSimulation',
+            '--binaries-folder',
+            sourceSets.test.output.classesDir,
+            '--results-folder',
+            'build/reports/gatling'
+}
