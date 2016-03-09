@@ -35,3 +35,5 @@ task runGatlingTest(type: JavaExec, dependsOn: warmUp) {
             '--results-folder',
             'build/reports/gatling'
 }
+
+task wrapper(type: Wrapper) { gradleVersion = '2.11' }
