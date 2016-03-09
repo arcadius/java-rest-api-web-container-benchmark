@@ -5,8 +5,6 @@ import com.menelic.jwcb.gatling.Common._
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
-import scala.concurrent.duration._
-
 
 class RestApiSimulation extends Simulation {
   val name = getClass.getSimpleName
@@ -16,5 +14,5 @@ class RestApiSimulation extends Simulation {
       .get(apiPath))
   }
 
-  setUp(scn.inject(rampUsers(users).over(ramp minutes)).protocols(httpProtocol))
+  setUp(scn.inject(rampUsers(users).over(rampUpDuration minutes)).protocols(httpProtocol))
 }

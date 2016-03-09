@@ -11,7 +11,7 @@ object Common {
   val containerName = System.getProperty("test.container", "Generic Container")
 
   val users = Integer.getInteger("test.users", 1)
-  val ramp = Integer.getInteger("test.ramp", 1)
+  val rampUpDuration = Integer.getInteger("test.rampUpDuration", 1)
   val pause = Integer.getInteger("test.pause", 2)
   val testDuration = Integer.getInteger("test.testDuration", 15)
   val warmUpDuration = Integer.getInteger("test.warmUpDuration", 15)

@@ -23,7 +23,7 @@ task warmUp(type: JavaExec, dependsOn: compileTestScala) {
             sourceSets.test.output.classesDir
 }
 
-task runTest(type: JavaExec, dependsOn: warmUp) {
+task runGatlingTest(type: JavaExec, dependsOn: warmUp) {
     systemProperties = System.properties
     main = 'io.gatling.app.Gatling'
     classpath sourceSets.test.output + sourceSets.test.runtimeClasspath
