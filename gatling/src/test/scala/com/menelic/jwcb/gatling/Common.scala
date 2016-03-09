@@ -8,12 +8,12 @@ object Common {
   val apiPath = "/api"
 
   val hostPort = System.getProperty("test.host", "127.0.0.1:8080")
-  val containerName = System.getProperty("test.container", "Generic")
+  val containerName = System.getProperty("test.container", "Generic Container")
 
-  val users = Integer.getInteger("test.users", 128)
-  val ramp = Integer.getInteger("test.ramp", 5)
+  val users = Integer.getInteger("test.users", 1)
+  val ramp = Integer.getInteger("test.ramp", 1)
   val pause = Integer.getInteger("test.pause", 2)
-  val testDuration = Integer.getInteger("test.duration", 15)
+  val testDuration = Integer.getInteger("test.testDuration", 15)
   val warmUpDuration = Integer.getInteger("test.warmUpDuration", 15)
 
 
