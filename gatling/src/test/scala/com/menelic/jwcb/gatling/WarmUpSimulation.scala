@@ -16,5 +16,5 @@ class WarmUpSimulation extends Simulation {
       .get(apiPath))
   }
 
-  setUp(scn.inject(rampUsers(users).over(rampUpDuration minutes)).protocols(httpProtocol))
+  setUp(scn.inject(rampUsers(warmUpUsers).over(rampUpDuration minutes)).protocols(httpProtocol))
 }

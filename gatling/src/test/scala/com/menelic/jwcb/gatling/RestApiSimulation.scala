@@ -14,5 +14,5 @@ class RestApiSimulation extends Simulation {
       .get(apiPath))
   }
 
-  setUp(scn.inject(rampUsers(users).over(rampUpDuration minutes)).protocols(httpProtocol))
+  setUp(scn.inject(rampUsers(testUsers).over(rampUpDuration minutes)).protocols(httpProtocol))
 }

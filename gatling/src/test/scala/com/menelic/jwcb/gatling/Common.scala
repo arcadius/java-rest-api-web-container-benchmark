@@ -10,7 +10,8 @@ object Common {
   val hostPort = System.getProperty("test.host", "127.0.0.1:8080")
   val containerName = System.getProperty("test.container", "Generic Container")
 
-  val users = Integer.getInteger("test.users", 1)
+  val testUsers = Integer.getInteger("test.testUsers", 1)
+  val warmUpUsers = Integer.getInteger("test.warmUpUsers", 1)
   val rampUpDuration = Integer.getInteger("test.rampUpDuration", 1)
   val pause = Integer.getInteger("test.pause", 2)
   val testDuration = Integer.getInteger("test.testDuration", 15)
