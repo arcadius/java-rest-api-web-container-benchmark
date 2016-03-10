@@ -1,5 +1,5 @@
 
-`./gradlew clean runGatlingTest -Dtest.host=192.168.1.3:8080 -Dtest.pause=2 -Dtest.testDuration=15 -Dtest.testUsers=128 -Dtest.rampUpDuration=2 -Dtest.warmUpUsers=10 -Dtest.warmUpDuration=10 -Dtest.container=Grizzly`
+`./gradlew clean runGatlingTest -Dtest.host=192.168.1.3:8080 -Dtest.pause=1 -Dtest.testDuration=15 -Dtest.testUsers=128 -Dtest.rampUpDuration=3 -Dtest.warmUpUsers=10 -Dtest.warmUpDuration=10 -Dtest.container=Grizzly`
 
 |Test parameter|Meaning|Default value|
 |---|---|---|
