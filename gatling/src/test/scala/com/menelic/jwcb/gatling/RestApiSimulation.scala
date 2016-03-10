@@ -9,7 +9,7 @@ import io.gatling.http.Predef._
 class RestApiSimulation extends Simulation {
   val name = getClass.getSimpleName
 
-  val scn = scenario(name).pause(pause minutes).during(testDuration minutes) {
+  val scn = scenario(name).pause(testPause minutes).during(testDuration minutes) {
     exec(http(containerName)
       .get(apiPath))
   }

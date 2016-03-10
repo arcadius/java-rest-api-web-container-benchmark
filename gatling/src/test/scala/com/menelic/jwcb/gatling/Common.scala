@@ -13,7 +13,7 @@ object Common {
   val testUsers = Integer.getInteger("test.testUsers", 1)
   val warmUpUsers = Integer.getInteger("test.warmUpUsers", 1)
   val rampUpDuration = Integer.getInteger("test.rampUpDuration", 1)
-  val pause = Integer.getInteger("test.pause", 2)
+  val testPause = Integer.getInteger("test.pause", 2)
   val testDuration = Integer.getInteger("test.testDuration", 15)
   val warmUpDuration = Integer.getInteger("test.warmUpDuration", 15)
 
