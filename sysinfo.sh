@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "===CPU:"
-cat /proc/cpuinfo | grep "model name"
+cat /proc/cpuinfo |  egrep "processor|model name|cores"
 echo " "
 echo "===RAM: "
 free -h
