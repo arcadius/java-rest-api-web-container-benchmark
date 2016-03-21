@@ -15,7 +15,7 @@ There are 3 blog entries supporting this benchmark:
 
 - and http://menelic.com/2016/01/25/java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly-vs-undertow-round-2/
 
-- and java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly-vs-undertow-round-3
+- and http://menelic.com/2016/03/12/java-rest-api-benchmark-tomcat-vs-jetty-vs-grizzly-vs-undertow-round-3/
 
 
 ##Setup
